@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Image, Nav, Navbar } from "react-bootstrap";
 import profile from '../../assets/image.14.jpg';
 import logo from '../../assets/logo.jpg';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Router/AuthProvider";
 
 
 const Header = () => {
+  const {user,logOut} = useContext(AuthContext)
+
+  const handleLogout=()=>{
+    logOut()
+    .then(result=>{
+      const logout =result.user;
+      console.log(logout)
+    })
+
+    .catch(error =>{
+      console.log(error);
+    })
+
+  }
   return (
  <div>
    
@@ -17,8 +32,14 @@ const Header = () => {
           <Nav className="ms-auto py-2 px-4">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/blog">Blog</Nav.Link>
-            <Link to='/register'><Button className="bg-dark me-3">Register</Button></Link>
-            <Link to='/login'><Button className="bg-dark me-3 px-3">Login</Button></Link>
+            
+
+            { user ?
+              <Button onClick={handleLogout} variant="secondary">  Logout</Button>:
+           <Link to='/login'> <Button variant="secondary">  Login</Button></Link>
+            }
+             
+           
 
             {/* <Image style={{height:'45px', width:'45px'}} src={profile}roundedCircle /> */}
           </Nav>

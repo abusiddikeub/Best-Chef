@@ -1,16 +1,58 @@
-import React, { useState } from "react";
+import React, { useContext, useState} from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Router/AuthProvider";
+
+
 
 const Register = () => {
+
+const {Registered} = useContext(AuthContext);
+const [error,setError] = useState('')
+const [success,setSuccess] = useState('')
+
+const handleRegistered = event =>{
+  event.preventDefault();
+  setSuccess('')
+  const form = event.target;
+  const name = form.name.value;
+  const photo = form.photo.value;
+  const email = form.email.value;
+  const password = form.password.value;
+
+  console.log(name,photo,email,password);
+
+
+
+  Registered(email,password)
+ 
+  .then(
+    result =>{
+     const register = result.user;
+     console.log(register);
+     setError('')
+     event.target.reset();
+     setSuccess('Successfully The Register page !!!!!!')
+   
+    })
+
+  .catch(error =>{
+    setError(error.message);
+  })
+
+}
+
 
   return (
 <div>
                <h2 className="text-center mt-5">Please Register</h2>
-<div className="mx-auto w-50 border mt-4 p-5 bg-info rounded">
-      <Form >
+<div className="mx-auto w-50 border mt-4 p-5 rounded">
+
+      <Form 
+      onSubmit={handleRegistered}
+      
+      >
 
         <Form.Group className="mb-3 " controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -23,9 +65,9 @@ const Register = () => {
         </Form.Group>
 
         <Form.Group className="mb-3 " controlId="formBasicEmail">
-          <Form.Label>URL
+          <Form.Label> Photo URL
           </Form.Label>
-          <Form.Control type="text" name='url' placeholder="Enter Your Url"  required/>
+          <Form.Control type="text" name='photo' placeholder="photo URL"  required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -41,6 +83,8 @@ const Register = () => {
       <div>
         <small>already have register ? Please <Link to='/login'>Login</Link></small>
       </div>
+      <p className="text-danger">{error}</p>
+      <p className="text-primary">{success}</p>
     </div>
 </div>
   );
