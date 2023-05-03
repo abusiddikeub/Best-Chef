@@ -5,7 +5,6 @@ import Blog from "../pages/Blog/Blog";
 import Error from "../pages/Error/Error";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import DetailsPage from "../Main component/detailsPage/Details";
 import Details from "../Main component/detailsPage/Details";
 
 

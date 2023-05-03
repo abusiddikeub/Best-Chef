@@ -1,37 +1,17 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-import { Form, Link } from "react-router-dom";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import app from "../../Firebase/firebase.config";
-
-const auth = getAuth(app);
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
-const handleLogin =(event) =>{
-                console.log('btn')
-                event.preventDefault();
-
-                const email = event.target.email.value;
-                const password = event.target.password.value;
-                console.log(email,password)
-
-                createUserWithEmailAndPassword(auth,email,password)
-                .then(result =>{
-                  const logged = result.user;
-                  console.log(logged);
-   })
-   .catch(error =>{
-                  console.error(error);
-   })
-}
   return (
                <div>
                <div className="container">
                  <div className="row d-flex justify-content-center align-items-center">
                    <div className="col-md-6 ">
                      <div className="border w-100 m-auto text-center p-5">
-                       <form onSubmit={handleLogin} action="">
+                       <form
+                     
+                        action="">
                          <input
                            className="email p-3 m-2"
                            type="email"
@@ -67,7 +47,6 @@ const handleLogin =(event) =>{
                        alt=""
                      />
                    </div>
-                   {/* <SocialLoginBtn></SocialLoginBtn> */}
                  </div>
                </div>
              </div>
