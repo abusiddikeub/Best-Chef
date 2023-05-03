@@ -39,9 +39,14 @@ const handleRegistered = event =>{
 
   .catch(error =>{
     setError(error.message);
-    if(password.length<6){
+   
+     if(!/(?=.*[A-Z])/.test(password)){
+      setError('please add at least one uppercase!!!')
+    }
+    else if(password.length<6){
       setError('please add at least 6 characters in your password')
     }
+    
   })
 
 }
