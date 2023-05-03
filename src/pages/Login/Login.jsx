@@ -23,6 +23,9 @@ signIn(email,password)
 .then(result =>{
 const login = result.user;
 console.log(login);
+setError('')
+     event.target.reset();
+     setSuccess('Successfully The Login page !!!!!!')
 
 })
 .catch(error =>{
@@ -64,7 +67,7 @@ console.log(login);
                 </p>
               </form>
            
-             
+        <p className="text-success">{success}</p>     
             </div>
           </div>
           <div className="col-md-6">
