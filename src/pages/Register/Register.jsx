@@ -39,6 +39,9 @@ const handleRegistered = event =>{
 
   .catch(error =>{
     setError(error.message);
+    if(password.length<6){
+      setError('please add at least 6 characters in your password')
+    }
   })
 
 }
