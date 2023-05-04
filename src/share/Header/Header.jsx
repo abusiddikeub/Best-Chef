@@ -31,16 +31,18 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto py-2 px-4">
         
-            <NavLink
-  href='/home'
-  className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active" : ""
-  }
+         
+<NavLink
+  to="/blog"
+  style={({ isActive, isPending }) => {
+    return {
+      fontWeight: isActive ? "bold" : "",
+      color: isPending ? "yellow" : "white",
+    };
+  }}
 >
-  Home
+<Link to='/blog'> Blog</Link>
 </NavLink>
-            <Nav.Link href="/blog">Blog</Nav.Link>
-            
 
             { user ?
               <Button onClick={handleLogout} variant="secondary">  Logout</Button>:
