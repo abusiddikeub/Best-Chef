@@ -6,7 +6,6 @@ import { AuthContext } from "../../Router/AuthProvider";
 import { Spinner } from "react-bootstrap";
 
 
-
 const Register = () => {
 
 const {Registered,loading} = useContext(AuthContext);
@@ -15,7 +14,7 @@ const [success,setSuccess] = useState('')
 
 const handleRegistered = event =>{
   event.preventDefault();
-  // setSuccess('')
+   setSuccess('')
   const form = event.target;
   const name = form.name.value;
   const photo = form.photo.value;
@@ -37,9 +36,9 @@ if(loading){
      const register = result.user;
      console.log(register);
      setError('')
-    //  setSuccess('')
+      setSuccess('')
     event.target.reset();
-    //  setSuccess('Successfully The Register page !!!!!!')
+      setSuccess('Successfully The Register page !!!!!!')
    
     })
 

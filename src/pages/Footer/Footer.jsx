@@ -7,8 +7,8 @@ const Footer = () => {
   return (
     
         <Container className="">
-          <Row>
-            <Col sm>
+          <Row sm={12} xl={4}>
+            <Col >
             <div>
           <h1 className="m-2">Let's  <span className="text-success">Cook</span>....</h1>
         <div className="">
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
             </Col>
 
-            <Col sm>
+            <Col >
             <div className="">
           <h3 className="fs-2">Company</h3>
           <p>Work </p>

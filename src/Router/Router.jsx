@@ -6,6 +6,7 @@ import Error from "../pages/Error/Error";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Details from "../Main component/detailsPage/Details";
+import PrivateRouter from "./private Router/PrivateRouter";
 
 
 
@@ -41,7 +42,7 @@ element:<Home></Home>
 
 {
   path:"details/:id",
-  element:<Details></Details>
+  element:<PrivateRouter><Details></Details></PrivateRouter>
 }
 
 

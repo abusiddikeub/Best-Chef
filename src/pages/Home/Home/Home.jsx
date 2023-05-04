@@ -8,11 +8,13 @@ import SideBanner from "../../sideBanner/SideBanner";
 import ExtraBanner from "../../Extra banner/ExtraBanner";
 import ChefData from "../../../Main component/ChefData/ChefData";
 
+
 const Home = () => {
   
   return (
   
     <Container>
+
      
         <div className="background text-white text-center ">
     <div className="container-text">

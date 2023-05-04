@@ -30,7 +30,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(()=>{
 const unsubscribe = onAuthStateChanged(auth,signIn=>{
-// console.log('login and logout',signIn)
+ console.log('login and logout',signIn)
 setUser(signIn)
 setLoading(false);
 

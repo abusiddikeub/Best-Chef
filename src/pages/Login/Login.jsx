@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthProvider";
 import { Button } from "react-bootstrap";
 import {
@@ -14,6 +14,10 @@ import {  FaGithub, FaGoogle } from 'react-icons/fa';
 const Login = () => {
 
 const {signIn} = useContext(AuthContext);
+const navigate = useNavigate();
+const location = useLocation();
+console.log(location);
+const from = location.state?.from?.pathname || '/home'
 
 const [user, setUser] = useState(null);
 const auth = getAuth(app);
@@ -55,10 +59,11 @@ console.log(login);
 setError('')
      event.target.reset();
      setSuccess('Successfully The Login page !!!!!!')
+     navigate(from,{replace:true})
 
 })
 .catch(error =>{
-  setError(error.message)
+  setError(error)
   
 })
 
@@ -92,7 +97,7 @@ setError('')
                   <small className="text-dark">
                     are you new? register here..
                   </small>
-                  <Link to="/register">Register</Link>
+<Link to="/register">Register</Link>
                 </p>
 
        
