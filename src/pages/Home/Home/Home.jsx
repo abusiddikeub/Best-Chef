@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button, Container, Image } from "react-bootstrap";
-import bg from '../../../assets/bg.jpg'
 import'./Home.css'
 import {  FaArrowRight } from "react-icons/fa";
 import Banner from "../../Banner/Banner";
@@ -8,14 +7,11 @@ import SideBanner from "../../sideBanner/SideBanner";
 import ExtraBanner from "../../Extra banner/ExtraBanner";
 import ChefData from "../../../Main component/ChefData/ChefData";
 
-
 const Home = () => {
   
   return (
   
     <Container>
-
-     
 <div sm={12} md={4} className=" background text-white text-center ">
     <div className="container-text ">
     <h1 className="">Best Food For 
