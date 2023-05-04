@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Header from "../../share/Header/Header";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Button,  Col, Container, Row } from "react-bootstrap";
 
 const Details = () => {
   const [news, setNews] = useState();
@@ -23,14 +23,14 @@ const Details = () => {
 
       <Container>
         <Row className="mt-5 border p-2 ">
-          <Col>
+          <Col s>
             <img
               style={{ height: "350px", width: "350px", marginLeft: "20px" }}
               src={news?.image}
               alt=""
             />
           </Col>
-          <Col>
+          <Col >
             <div className=" p-3 text-center mt-4">
               <h3> Chef Name: {news?.chef_name} </h3>
               <p className="fs-5">
@@ -46,14 +46,14 @@ const Details = () => {
 
         <h3 className="text-center text-success mt-5">Recipe</h3>
         <Row className="mt-5 border p-2 ">
-          <Col>
+          <Col >
             <img
               style={{ height: "350px", width: "350px", marginLeft: "20px" }}
               src={news?.img}
               alt=""
             />
           </Col>
-          <Col>
+          <Col >
             <div className=" p-3 text-center mt-4">
               <h4> Recipe Name: {news?.recipe_name} </h4>
               <p className="fs-5">
@@ -70,14 +70,14 @@ const Details = () => {
 
 
         <Row className="mt-5 border p-2 ">
-          <Col>
+          <Col >
             <img
               style={{ height: "350px", width: "350px", marginLeft: "20px" }}
               src={news?.img1}
               alt=""
             />
           </Col>
-          <Col>
+          <Col >
             <div className=" p-3 text-center mt-4">
               <h4> Recipe Name: {news?.recipe_name1} </h4>
               <p className="fs-5">
@@ -92,7 +92,7 @@ const Details = () => {
           </Col>
         </Row>
         <Row className="mt-5 border p-2 ">
-          <Col>
+          <Col >
             <img
               style={{ height: "350px", width: "350px", marginLeft: "20px" }}
               src={news?.img2}

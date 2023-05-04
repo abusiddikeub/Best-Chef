@@ -23,7 +23,7 @@ const Header = () => {
 
   }
   return (
- <div>
+ <Container>
    
     <Navbar className="mt-3" collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -74,7 +74,7 @@ const Header = () => {
      
     </Navbar>
   
- </div>
+ </Container>
   );
 };
 

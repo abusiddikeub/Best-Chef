@@ -5,9 +5,7 @@ const Blog = () => {
   return (
     <div>
       
-     
-
-
+    
 
       <Row className="mt-5">
         <Col

@@ -16,8 +16,8 @@ const Home = () => {
     <Container>
 
      
-        <div className="background text-white text-center ">
-    <div className="container-text">
+<div sm={12} md={4} className=" background text-white text-center ">
+    <div className="container-text ">
     <h1 className="">Best Food For 
           <br />
           Your Taste

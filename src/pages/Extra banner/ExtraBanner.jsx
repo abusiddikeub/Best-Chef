@@ -6,7 +6,7 @@ import bugger2 from '../../assets/bugger2.webp';
 
 const ExtraBanner = () => {
   return (
-    <Carousel xs={6} xl={12} className="mt-4 ">
+    <Carousel sm={12} md={4}  className="mt-4 ">
       <Carousel.Item interval={1000}>
         <img
         style={{height:'600px', width:'100%'}}

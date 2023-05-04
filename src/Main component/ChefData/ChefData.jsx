@@ -16,8 +16,8 @@ const ChefData = () => {
   }, []);
   return (
                  <div className="mt-5">
-<h2 className="text-danger text-center mb-5  ">Our Best Chef </h2>
-<div className="chef-container  ">
+<h2 className="text-danger text-center mb-5">Our Best Chef </h2>
+<div  className="chef-container  ">
 {
                chefData.map(chef => <ChefShow
                

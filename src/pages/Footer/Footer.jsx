@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     
         <Container className="">
-          <Row sm={12} xl={4}>
-            <Col >
-            <div>
+          <Row >
+            <Col sm={12} md={4} className="text-center">
+            <div >
           <h1 className="m-2">Let's  <span className="text-success">Cook</span>....</h1>
         <div className="">
         <FaFacebookF className="text-primary fs-1 ms-3 "></FaFacebookF>
@@ -19,7 +19,7 @@ const Footer = () => {
         </div>
             </Col>
 
-            <Col >
+            <Col sm={12} md={4} className="text-center mt-4">
             <div className="">
           <h3 className="fs-2">Company</h3>
           <p>Work </p>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
             </Col>
 
-            <Col sm>
+            <Col sm={12} md={4}  className="text-center mt-4">
             <div>
           <h3 className="fs-2">Recipes</h3>
           <p>Prototype</p>

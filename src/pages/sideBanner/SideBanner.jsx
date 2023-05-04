@@ -10,10 +10,10 @@ const SideBanner = () => {
     <div className="mt-5">
       <Container>
       <Row>
-        <Col sm={12} md={6}> 
-        <Image style={{ height: "300px" }} src={SideBanners}  />
+        <Col sm={12} md={7}> 
+        <Image style={{ height: "400px",width:"500px" }} src={SideBanners}  />
         </Col>
-        <Col sm={6} md={6}>    
+        <Col sm={12} md={4}>    
          <h1>We Provide <br /> <span>Healthy </span> Food </h1>
         <p>The importance of food is obvious and essential. Healthy food provides us the nutrients and energy to develop and grow, be active and healthy, to move, play, work, think and learn. 
 Food and water are the main sources of nutrition and strengthening the body, but many of the foods we eat do not have any nutritional value.  </p>
