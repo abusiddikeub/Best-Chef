@@ -2,13 +2,42 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthProvider";
 import { Button } from "react-bootstrap";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
+import app from "../../Firebase/firebase.config";
+import {  FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
 const {signIn} = useContext(AuthContext);
 
+const [user, setUser] = useState(null);
+const auth = getAuth(app);
+console.log(auth);
+const provider = new GoogleAuthProvider();
+
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+      })
+      .catch((error) => {
+        // console.log("error", error.message);
+        console.log(error.message)
+      });
+  };
+
+
 const [error,setError] = useState('');
 const [success,setSuccess] = useState('')
+
+
 
 const handleLoginPage = event =>{
   event.preventDefault();
@@ -17,7 +46,6 @@ const handleLoginPage = event =>{
   const email = form.email.value;
   const password = form.password.value;
   console.log(email,password);
-
 
 
 signIn(email,password)
@@ -67,8 +95,11 @@ setError('')
                   <Link to="/register">Register</Link>
                 </p>
 
-   <Button className="mb-2 bg-dark">Google Sign-in</Button> <br />
-   <Button className="mb-2 bg-dark">GitHub Sign-in</Button>
+       
+      <button className="bg-dark text-white mb-2 rounded p-2" onClick={handleGoogleSignIn}><FaGoogle/> Google login</button>
+      <br />
+
+   <Button className="mb-2 bg-dark"> <FaGithub></FaGithub> GitHub Sign-in</Button>
               </form>
            
         <p className="text-success">{success}</p>     

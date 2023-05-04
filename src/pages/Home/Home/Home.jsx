@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Container, Image } from "react-bootstrap";
 import bg from '../../../assets/bg.jpg'
 import'./Home.css'
@@ -8,11 +8,12 @@ import SideBanner from "../../sideBanner/SideBanner";
 import ExtraBanner from "../../Extra banner/ExtraBanner";
 import ChefData from "../../../Main component/ChefData/ChefData";
 
-
 const Home = () => {
+  
   return (
-
+  
     <Container>
+     
         <div className="background text-white text-center ">
     <div className="container-text">
     <h1 className="">Best Food For 

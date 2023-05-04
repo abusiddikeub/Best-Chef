@@ -9,7 +9,7 @@ const Details = () => {
   console.log(id);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
+    fetch(`https://chef-server-abusiddikeub.vercel.app/details/${id}`)
       .then((res) => res.json())
       .then((data) => setNews(data))
 

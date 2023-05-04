@@ -3,18 +3,19 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthProvider";
+import { Spinner } from "react-bootstrap";
 
 
 
 const Register = () => {
 
-const {Registered} = useContext(AuthContext);
+const {Registered,loading} = useContext(AuthContext);
 const [error,setError] = useState('')
 const [success,setSuccess] = useState('')
 
 const handleRegistered = event =>{
   event.preventDefault();
-  setSuccess('')
+  // setSuccess('')
   const form = event.target;
   const name = form.name.value;
   const photo = form.photo.value;
@@ -23,7 +24,11 @@ const handleRegistered = event =>{
 
   console.log(name,photo,email,password);
 
-
+if(loading){
+  return  <Spinner animation="grow" variant="warning" />
+   
+  
+}
 
   Registered(email,password)
  
@@ -32,18 +37,17 @@ const handleRegistered = event =>{
      const register = result.user;
      console.log(register);
      setError('')
-     event.target.reset();
-     setSuccess('Successfully The Register page !!!!!!')
+    //  setSuccess('')
+    event.target.reset();
+    //  setSuccess('Successfully The Register page !!!!!!')
    
     })
 
   .catch(error =>{
     setError(error.message);
-   
-     if(!/(?=.*[A-Z])/.test(password)){
-      setError('please add at least one uppercase!!!')
-    }
-    else if(password.length<6){
+
+  
+     if(password.length<6){
       setError('please add at least 6 characters in your password')
     }
     
@@ -92,7 +96,7 @@ const handleRegistered = event =>{
         <small>already have register ? Please <Link to='/login'>Login</Link></small>
       </div>
       <p className="text-danger">{error}</p>
-      <p className="text-primary">{success}</p>
+      {/* <p className="text-primary">{success}</p> */}
     </div>
 </div>
   );
