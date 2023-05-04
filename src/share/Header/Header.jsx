@@ -6,6 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthProvider";
 
 
+
 const Header = () => {
   const {user,logOut} = useContext(AuthContext)
 
@@ -31,7 +32,21 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto py-2 px-4">
         
-         
+            <NavLink
+  href='/home'
+  style={({ isActive, isPending }) =>{
+    return{
+      fontWeight:isActive ? "bold" : "",
+      color:isPending ? "isPanding" : "white",
+    };
+  }
+   
+  }
+>
+  Home
+</NavLink>
+          
+            
 <NavLink
   to="/blog"
   style={({ isActive, isPending }) => {
@@ -41,7 +56,7 @@ const Header = () => {
     };
   }}
 >
-<Link to='/blog'> Blog</Link>
+<Link className="m-2" to='/blog'> Blog </Link>
 </NavLink>
 
             { user ?

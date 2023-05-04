@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Container, Image } from "react-bootstrap";
 import bg from '../../../assets/bg.jpg'
 import'./Home.css'
-import { FaAngleLeft, FaArrowRight } from "react-icons/fa";
+import {  FaArrowRight } from "react-icons/fa";
 import Banner from "../../Banner/Banner";
 import SideBanner from "../../sideBanner/SideBanner";
 import ExtraBanner from "../../Extra banner/ExtraBanner";
