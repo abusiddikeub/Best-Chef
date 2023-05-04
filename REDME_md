@@ -1,1 +1,7 @@
-
+npm create vite@latest name-of-your-project -- --template react
+npm install react-router-dom localforage match-sorter sort-by
+git add .
+git commit
+git push
+collecting data from server side 
+six chef in details home page
