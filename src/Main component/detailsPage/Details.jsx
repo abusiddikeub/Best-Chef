@@ -79,7 +79,7 @@ const Details = () => {
           </Col>
           <Col>
             <div className=" p-3 text-center mt-4">
-              <h4> Recipe Name: {news?.recipe_name} </h4>
+              <h4> Recipe Name: {news?.recipe_name1} </h4>
               <p className="fs-5">
                 {" "}
            Cooking Method: <small>{news?.cooking_method}</small>
@@ -101,7 +101,7 @@ const Details = () => {
           </Col>
           <Col>
             <div className=" p-3 text-center mt-4">
-              <h4> Recipe Name: {news?.recipe_name} </h4>
+              <h4> Recipe Name: {news?.recipe_name2} </h4>
               <p className="fs-5">
                
            Cooking Method: <small>{news?.cooking_method}</small>

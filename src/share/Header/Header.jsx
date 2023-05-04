@@ -30,7 +30,15 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto py-2 px-4">
-            <Nav.Link href="/">Home</Nav.Link>
+        
+            <NavLink
+  href='/home'
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  }
+>
+  Home
+</NavLink>
             <Nav.Link href="/blog">Blog</Nav.Link>
             
 

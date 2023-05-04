@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Router/AuthProvider";
+import { Button } from "react-bootstrap";
 
 const Login = () => {
 
@@ -65,6 +66,9 @@ setError('')
                   </small>
                   <Link to="/register">Register</Link>
                 </p>
+
+   <Button className="mb-2 bg-dark">Google Sign-in</Button> <br />
+   <Button className="mb-2 bg-dark">GitHub Sign-in</Button>
               </form>
            
         <p className="text-success">{success}</p>     
