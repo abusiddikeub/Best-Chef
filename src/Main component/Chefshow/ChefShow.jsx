@@ -19,6 +19,7 @@ const ChefShow = ({ chef }) => {
         <h5>Recipe : {Total_recipes}</h5>
         <Link to={`/details/${chef?.id}`}><Button className="bg-dark">Details </Button></Link>
       </Card.Body>
+    
     </Card>
                </div>
 

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Header from "../../share/Header/Header";
 import { Button,  Col, Container, Row } from "react-bootstrap";
-
 const Details = () => {
   const [news, setNews] = useState();
   const { id } = useParams();
@@ -47,11 +46,13 @@ const Details = () => {
         <h3 className="text-center text-success mt-5">Recipe</h3>
         <Row className="mt-5 border p-2 ">
           <Col >
-            <img
+         
+          <img
               style={{ height: "350px", width: "350px", marginLeft: "20px" }}
               src={news?.img}
-              alt=""
+              alt="photo"
             />
+          
           </Col>
           <Col >
             <div className=" p-3 text-center mt-4">
@@ -71,11 +72,13 @@ const Details = () => {
 
         <Row className="mt-5 border p-2 ">
           <Col >
-            <img
+     
+       <img
               style={{ height: "350px", width: "350px", marginLeft: "20px" }}
               src={news?.img1}
               alt=""
             />
+     
           </Col>
           <Col >
             <div className=" p-3 text-center mt-4">
@@ -93,11 +96,13 @@ const Details = () => {
         </Row>
         <Row className="mt-5 border p-2 ">
           <Col >
-            <img
+        
+         <img
               style={{ height: "350px", width: "350px", marginLeft: "20px" }}
               src={news?.img2}
               alt=""
             />
+        
           </Col>
           <Col>
             <div className=" p-3 text-center mt-4">
