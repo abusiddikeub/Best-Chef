@@ -30,9 +30,10 @@ const Header = () => {
         <Navbar.Brand href="#home" className="fs-3  font-bold"> <span><Image style={{height:'45px', width:'45px'}} src={logo}roundedCircle /></span>  B.FOOD</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto py-2 px-4">
+          <Nav className="ms-auto py-2 px-4 ">
         
-            <NavLink
+<div className="mt-2 me-5">
+<NavLink
   href='/home'
   style={({ isActive, isPending }) =>{
     return{
@@ -45,8 +46,10 @@ const Header = () => {
 >
   Home
 </NavLink>
+</div>
           
             
+<div className="mt-2 me-5">
 <NavLink
   to="/blog"
   style={({ isActive, isPending }) => {
@@ -58,15 +61,21 @@ const Header = () => {
 >
 <Link className="m-2" to='/blog'> Blog </Link>
 </NavLink>
+</div>
 
-            { user ?
+<div className="mt-1 mb-2 me-5">
+<Image style={{height:'45px', width:'45px'}} src={profile}roundedCircle />
+</div>
+
+<div className="mt-1 me-1">
+  
+{ user ?
               <Button onClick={handleLogout} variant="secondary">  Logout</Button>:
            <Link to='/login'> <Button variant="secondary">  Login</Button></Link>
             }
+</div>
              
-           
-
-            {/* <Image style={{height:'45px', width:'45px'}} src={profile}roundedCircle /> */}
+          
           </Nav>
         </Navbar.Collapse>
     

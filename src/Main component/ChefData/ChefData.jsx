@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ChefShow from "../Chefshow/ChefShow";
 import './ChefData.css'
+import { Col, Row } from "react-bootstrap";
 
 const ChefData = () => {
   const [chefData, setChefData] = useState([]);
@@ -17,7 +18,8 @@ const ChefData = () => {
   return (
                  <div className="mt-5">
 <h2 className="text-danger text-center mb-5">Our Best Chef </h2>
-<div  className="chef-container  ">
+<div  className="chef-container" >
+<Row md={3} >
 {
                chefData.map(chef => <ChefShow
                
@@ -26,6 +28,7 @@ const ChefData = () => {
                
                ></ChefShow>)
 }
+</Row>
 </div>
 
                  </div>

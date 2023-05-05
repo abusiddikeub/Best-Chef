@@ -8,7 +8,7 @@ const ChefShow = ({ chef }) => {
   return (
 <div  >
 <div className="chef-container">
-  <Card className="text-center " style={{ width: '18rem'  }}>
+  <Card className="text-center mb-4" style={{ width: '18rem'  }}>
       <Card.Img style={{width:'250px',height:'250px', margin:'18px'}} variant="top" src={image} />
       <Card.Body >
         <Card.Title>{chef_name}</Card.Title>
